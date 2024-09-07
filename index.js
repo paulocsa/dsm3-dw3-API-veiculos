@@ -1,11 +1,14 @@
 import express from "express"; // importando o express
 import mongoose from "mongoose"; //importando o mongoose
 import Veiculo from "./Models/Veiculos.js";//importando o model
+import veiculosRoutes from "./routes/veiculoRoutes.js" //importando as rotas
+
 const app = express();
 
 //Configurano o Express
 app.use(express.urlencoded({extend: false}));
 app.use(express.json());
+app.use("/",veiculosRoutes);
 
 //Testando a API
 app.get("/", (req,res) => {
