@@ -15,9 +15,9 @@ const getAllVeiculos = async (req,res) =>{
 //Cadastrando um novo veículo
 const createVeiculo = async(req,res) =>{
     try{
-        const{modelo,year,marca,cor} = req.body;
-        await veiculoService.Create(modelo,year,marca,cor);
-        res.sendStatus(201); //Código 201(CREATED)
+        const{modelo,year,marca,cor,categoria,especificacoes} = req.body;
+        await veiculoService.Create(modelo,year,marca,cor,categoria,especificacoes);
+        res.sendStatus(201); //Código 201 = CREATED
     }catch(error){
         console.log(error)
         res.status(500).json({error: "Erro interno do servidor!"})
@@ -30,13 +30,13 @@ const deleteVeiculo = async (req, res) => {
         if(ObjectId.isValid(req.params.id)){
             const id = req.params.id
             veiculoService.Delete(id)
-            res.sendStatus(204)// Código 204 (NO CONTENT)
+            res.sendStatus(204)// Código 204 = NO CONTENT
         }else{
-            res.sendStatus(400)// Código 400 (BAD REQUEST)
+            res.sendStatus(400)// Código 400 = BAD REQUEST
         }
     } catch (error) {
         console.log(error)
-        res.status(500).json({ error: 'Erro interno do servidor.'}) // Código 500 (BAD REQUEST)
+        res.status(500).json({ error: 'Erro interno do servidor.'}) // Código 500 = BAD REQUEST
     }
 };
 
@@ -45,15 +45,15 @@ const updateVeiculo = async (req, res) => {
     try{
         if(ObjectId.isValid(req.params.id)) {
             const id = req.params.id;
-            const { modelo,year,marca,cor } = req.body;
-            const veiculo = await veiculoService.Update(id, modelo, year, marca, cor);
-            res.status(200).json({ veiculo }); //Código 200(OK)
+            const {modelo,year,marca,cor,categoria,especificacoes} = req.body;
+            const veiculo = await veiculoService.Update(id,modelo,year,marca,cor,categoria,especificacoes);
+            res.status(200).json({ veiculo }); //Código 200 = OK
         } else {
-            res.sendStatus(400) //Código 400 (BAD REQUEST)
+            res.sendStatus(400) //Código 400 = BAD REQUEST
         }
     }catch (error){
         console.log(error);
-        res.sendStatus(500); //Código 500 (Erro interno do servidor)
+        res.sendStatus(500); //Código 500 = Erro interno do servidor
     }
 };
 
@@ -64,7 +64,7 @@ const getOneVeiculo = async (req, res) => {
             const id = req.params.id
             const veiculo = await veiculoService.getOne(id)
             if (!veiculo) {
-                res.sendStatus(404) //Jogo não encontrado
+                res.sendStatus(404) //Veiculo não encontrado
             } else {
                 res.status(200).json({ veiculo })
             }

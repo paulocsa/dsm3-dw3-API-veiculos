@@ -11,14 +11,16 @@ class veiculoService{
         }
     }
 
-//Cadastro de veiculos na API
-async Create(modelo,year,marca,cor) {
+//Cadastro de veiculo na API
+async Create(modelo,year,marca,cor,categoria,especificacoes) {
     try{
         const newVeiculo = new Veiculo({
             modelo,
             year,
             marca,
-            cor
+            cor,
+            categoria,
+            especificacoes
         })
         await newVeiculo.save()
     }catch(error){
@@ -26,7 +28,7 @@ async Create(modelo,year,marca,cor) {
     }
 }
 
-// Delete de veiculos na API
+// Delete veiculo na API
 async Delete(id){
     try{
         await Veiculo.findByIdAndDelete(id);
@@ -37,7 +39,7 @@ async Delete(id){
 }
 
 // Alterando dados de um veiculo na API
-async Update(id,modelo,year,marca,cor){
+async Update(id,modelo,year,marca,cor,categoria,especificacoes){
     try{
         const updateVeiculo = await Veiculo.findByIdAndUpdate(
             id,
@@ -46,6 +48,8 @@ async Update(id,modelo,year,marca,cor){
                 year,
                 marca,
                 cor,
+                categoria,
+                especificacoes
             },
             { new: true }
         );
@@ -56,6 +60,8 @@ async Update(id,modelo,year,marca,cor){
     }
 }
 
+
+// Buscando um veiculo especifico na API
 async getOne(id){
     try{
         const veiculo = await Veiculo.findOne({_id: id})
