@@ -12,15 +12,15 @@ class veiculoService{
     }
 
 //Cadastro de veiculo na API
-async Create(modelo,year,marca,cor,categoria,especificacoes) {
+async Create(model,year,brand,color,category,specifications) {
     try{
         const newVeiculo = new Veiculo({
-            modelo,
+            model,
             year,
-            marca,
-            cor,
-            categoria,
-            especificacoes
+            brand,
+            color,
+            category,
+            specifications
         })
         await newVeiculo.save()
     }catch(error){
@@ -39,17 +39,17 @@ async Delete(id){
 }
 
 // Alterando dados de um veiculo na API
-async Update(id,modelo,year,marca,cor,categoria,especificacoes){
+async Update(id,model,year,brand,color,category,specifications){
     try{
         const updateVeiculo = await Veiculo.findByIdAndUpdate(
             id,
             {
-                modelo,
+                model,
                 year,
-                marca,
-                cor,
-                categoria,
-                especificacoes
+                brand,
+                color,
+                category,
+                specifications
             },
             { new: true }
         );

@@ -15,8 +15,8 @@ const getAllVeiculos = async (req,res) =>{
 //Cadastrando um novo veículo
 const createVeiculo = async(req,res) =>{
     try{
-        const{modelo,year,marca,cor,categoria,especificacoes} = req.body;
-        await veiculoService.Create(modelo,year,marca,cor,categoria,especificacoes);
+        const{model,year,brand,color,category,specifications} = req.body;
+        await veiculoService.Create(model,year,brand,color,category,specifications);
         res.sendStatus(201); //Código 201 = CREATED
     }catch(error){
         console.log(error)
@@ -45,8 +45,8 @@ const updateVeiculo = async (req, res) => {
     try{
         if(ObjectId.isValid(req.params.id)) {
             const id = req.params.id;
-            const {modelo,year,marca,cor,categoria,especificacoes} = req.body;
-            const veiculo = await veiculoService.Update(id,modelo,year,marca,cor,categoria,especificacoes);
+            const {model,year,brand,color,category,specifications} = req.body;
+            const veiculo = await veiculoService.Update(id,model,year,brand,color,category,specifications);
             res.status(200).json({ veiculo }); //Código 200 = OK
         } else {
             res.sendStatus(400) //Código 400 = BAD REQUEST

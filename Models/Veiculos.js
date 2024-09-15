@@ -1,23 +1,23 @@
 import mongoose from "mongoose";
 
 // Aninhado
-const especificacoesSchema = new mongoose.Schema({
-    motorizacao: String,
-    combustivel: String,
+const specificationsSchema = new mongoose.Schema({
+    engine: String,
+    fuel: String,
     torque: Number,
-    cilindrada: Number,
-    direcao: String,
-    typeTracao: String,
+    displacement: Number,
+    steering: String,
+    drivetrain: String
 })
 
 
 const veiculoSchema = new mongoose.Schema({
-    modelo: String,
+    model: String,
     year: Number,
-    marca: String,
-    cor: String,
-    categoria: String,
-    especificacoes: [especificacoesSchema]
+    brand: String,
+    color: String,
+    category: String,
+    specifications: [specificationsSchema]
 })
 
 const Veiculo = mongoose.model('Veiculo',veiculoSchema)
