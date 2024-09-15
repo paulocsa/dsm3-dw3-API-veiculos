@@ -34,7 +34,7 @@ veiculoRoutes.get("/veiculos", veiculoController.getAllVeiculos);
 
 #### Resposta de Sucesso (200)
 
-Quando a solicitação é processada com sucesso, a API retorna um status 200, indicando que a listagem de todos os veículos cadastrados no banco de dados foi obtida com êxito. A resposta inclui um corpo com os dados dos veículos.
+Quando a solicitação é processada com sucesso, a API retorna um status 200, indicando que a listagem de todos os veículos cadastrados no banco de dados foi obtida com êxito. A resposta inclui um colorpo com os dados dos veículos.
 
 
 ```
@@ -42,19 +42,19 @@ Quando a solicitação é processada com sucesso, a API retorna um status 200, i
 	"veiculos": [
 		{
 			"_id": "66e72b88e79b81722c67cad1",
-			"modelo": "Mustang",
+			"model": "Mustang",
 			"year": 2024,
-			"marca": "Ford",
-			"cor": "Vermelho",
-			"categoria": "Esportivo",
-			"especificacoes": [
+			"brand": "Ford",
+			"color": "Vermelho",
+			"category": "Esportivo",
+			"specifications": [
 				{
-					"motorizacao": "5.0 V8",
-					"combustivel": "Gasolina",
+					"engine": "5.0 V8",
+					"fuel": "Gasolina",
 					"torque": 450,
-					"cilindrada": 4951,
-					"direcao": "Hidráulica",
-					"typeTracao": "Tração traseira",
+					"displacement": 4951,
+					"steering": "Hidráulica",
+					"drivetrain": "Tração traseira",
 					"_id": "66e72b88e79b81722c67cad2"
 				}
 			],
@@ -62,19 +62,19 @@ Quando a solicitação é processada com sucesso, a API retorna um status 200, i
 		},
 		{
 			"_id": "66e7335be79b81722c67cad6",
-			"modelo": "Corolla",
+			"model": "colorolla",
 			"year": 2024,
-			"marca": "Toyota",
-			"cor": "Prata",
-			"categoria": "Sedã",
-			"especificacoes": [
+			"brand": "Toyota",
+			"color": "Prata",
+			"category": "Sedã",
+			"specifications": [
 				{
-					"motorizacao": "2.0 Flex",
-					"combustivel": "Gasolina/Álcool",
+					"engine": "2.0 Flex",
+					"fuel": "Gasolina/Álcool",
 					"torque": 200,
-					"cilindrada": 1987,
-					"direcao": "Elétrica",
-					"typeTracao": "Tração dianteira",
+					"displacement": 1987,
+					"steering": "Elétrica",
+					"drivetrain": "Tração dianteira",
 					"_id": "66e7335be79b81722c67cad7"
 				}
 			],
@@ -86,7 +86,7 @@ Quando a solicitação é processada com sucesso, a API retorna um status 200, i
 
 #### Resposta de Erro Interno do Servidor! 500
 
-Quando ocorre um erro inesperado no servidor durante o processamento da solicitação, a API retorna um status 500 Internal Server Error. Isso indica que houve uma falha interna no sistema. O corpo da resposta pode conter uma mensagem de erro detalhada, útil para depuração, mas geralmente não revela informações sensíveis.
+Quando ocolorre um erro inesperado no servidor durante o processamento da solicitação, a API retorna um status 500 Internal Server Error. Isso indica que houve uma falha interna no sistema. O colorpo da resposta pode conter uma mensagem de erro detalhada, útil para depuração, mas geralmente não revela informações sensíveis.
 
 ```
 {
@@ -120,7 +120,7 @@ veiculoRoutes.get("/veiculo/:id", veiculoController.getOneVeiculo);
 
 #### Resposta de Sucesso (200)
 
-Quando a solicitação é processada com sucesso, a API retorna um status 200, indicando que o veículo específico foi obtido com êxito. A resposta inclui um corpo com os dados do veículo solicitado.
+Quando a solicitação é processada com sucesso, a API retorna um status 200, indicando que o veículo específico foi obtido com êxito. A resposta inclui um colorpo com os dados do veículo solicitado.
 
 
 ```
@@ -128,19 +128,19 @@ Quando a solicitação é processada com sucesso, a API retorna um status 200, i
 	"veiculos": [
 		{
 			"_id": "66e71a32e79b81722c67ca9f",
-			"modelo": "Mustang",
+			"model": "Mustang",
 			"year": 2024,
-			"marca": "Ford",
-			"cor": "Vermelho",
-			"categoria": "Esportivo",
-			"especificacoes": [
+			"brand": "Ford",
+			"color": "Vermelho",
+			"category": "Esportivo",
+			"specifications": [
 				{
-					"motorizacao": "5.0 V8",
-					"combustivel": "Gasolina",
+					"engine": "5.0 V8",
+					"fuel": "Gasolina",
 					"torque": 450,
-					"cilindrada": 4951,
-					"direcao": "Hidráulica",
-					"typeTracao": "Tração traseira",
+					"displacement": 4951,
+					"steering": "Hidráulica",
+					"drivetrain": "Tração traseira",
 					"_id": "66e71a32e79b81722c67caa0"
 				}
 			],
@@ -173,7 +173,7 @@ Retornado quando o id fornecido não é um formato válido. O código de status 
 
 #### Erro (500 Internal Server Error)
 
-Retornado quando ocorre um erro inesperado no servidor. O código de status 500 indica que houve um problema interno que impediu o processamento da requisição.
+Retornado quando ocolorre um erro inesperado no servidor. O código de status 500 indica que houve um problema interno que impediu o processamento da requisição.
 
 ```
 {
@@ -194,22 +194,22 @@ Esse endpoint é responsável por cadastrar um novo veículo no banco de dados.
 ### Parametros da requisição
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
-| `modelo` | `String` | Obrigatório. O modelo do veículo. |
+| `model` | `String` | Obrigatório. O modelo do veículo. |
 | `year` | `Number` | Obrigatório. O ano do veículo. |
-| `marca` | `String` | Obrigatório. A marca do veículo. |
-| `cor` | `String` | Obrigatório. A cor do veículo. |
-| `categoria` | `String` |Obrigatório. A categoria do veículo. |
-| `especificacoes` | `object[]` | Obrigatório. Especificações detalhadas do veículo. |
+| `brand` | `String` | Obrigatório. A marca do veículo. |
+| `color` | `String` | Obrigatório. A cor do veículo. |
+| `category` | `String` |Obrigatório. A categoria do veículo. |
+| `specifications` | `object[]` | Obrigatório. Especificações detalhadas do veículo. |
 
-### Parametros do objeto "especificacoes"
+### Parametros do objeto "specifications"
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
-| `motorizacao` | `String` | Obrigatório. O tipo de motorização do veículo. |
-| `combustivel` | `string` |Obrigatório. Tipo de combustível utilizado.|
-| `torque` | `number` | Obrigatório. O torque do motor (Nm).|
-| `cilindrada` | `string` |Obrigatório. A cilindrada do motor (cc).|
-| `direcao` | `string` |Obrigatório. Tipo de direção (ex: hidráulica).|
-| `typeTracao` | `string` | Obrigatório. Especificações detalhadas do veículo.|
+| `engine` | `String` | Opcional . O tipo de motorização do veículo. |
+| `fuel` | `string` |Opcional . Tipo de combustível utilizado.|
+| `torque` | `number` | Opcional . O torque do motor (Nm).|
+| `displacement` | `string` |Opcional . A cilindrada do motor (cc).|
+| `steering` | `string` |Opcional . Tipo de direção (ex: hidráulica).|
+| `drivetrain` | `string` | Opcional . Especificações detalhadas do veículo.|
 
 #### Código
 ```
@@ -220,19 +220,19 @@ veiculoRoutes.post("/veiculo",veiculoController.createVeiculo);
 
 ```
 {
-    "modelo": "Mustang",
+    "model": "Mustang",
     "year": 2024,
-    "marca": "Ford",
-    "cor": "Vermelho",
-    "categoria": "Esportivo",
-    "especificacoes": [
+    "brand": "Ford",
+    "color": "Vermelho",
+    "category": "Esportivo",
+    "specifications": [
       {
-        "motorizacao": "5.0 V8",
-        "combustivel": "Gasolina",
+        "engine": "5.0 V8",
+        "fuel": "Gasolina",
         "torque": 450,
-        "cilindrada": 4951,
-        "direcao": "Hidráulica",
-        "typeTracao": "Tração traseira"
+        "displacement": 4951,
+        "steering": "Hidráulica",
+        "drivetrain": "Tração traseira"
       }
     ]
 }
@@ -247,7 +247,7 @@ Created
 ```
 
 #### Resposta de Erro Interno do Servidor(500)
-Caso essa resposta aconteça, significa que ocorreu um erro interno no servidor.
+Caso essa resposta aconteça, significa que ocolorreu um erro interno no servidor.
 ```
 {
     "err": "Erro interno do servidor!"
@@ -294,11 +294,13 @@ Retornado quando o id fornecido não é um formato válido. O código de status 
 ```
 
 #### Resposta de Erro Interno do Servidor(500)
-Caso essa resposta aconteça, significa que ocorreu um erro interno no servidor.
+Caso essa resposta aconteça, significa que ocolorreu um erro interno no servidor.
 ```
 {
     "err": "Erro interno do servidor!"
-}## Para Alterar um veículo
+}
+```
+## Para Alterar um veículo
 ```http
      PUT /veiculo/:id
 ```
@@ -308,22 +310,22 @@ Esse endpoint é responsável por alterar os detalhes de um veículo específico
 ### Parametros da requisição
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
-| `modelo` | `String` | Opcional. O modelo do veículo. |
+| `model` | `String` | Opcional. O modelo do veículo. |
 | `year` | `Number` | Opcional. O ano do veículo. |
-| `marca` | `String` | Opcional. A marca do veículo. |
-| `cor` | `String` | Opcional. A cor do veículo. |
-| `categoria` | `String` |Opcional. A categoria do veículo. |
-| `especificacoes` | `object[]` | Opcional. Especificações detalhadas do veículo. |
+| `brand` | `String` | Opcional. A marca do veículo. |
+| `color` | `String` | Opcional. A cor do veículo. |
+| `category` | `String` |Opcional. A categoria do veículo. |
+| `specifications` | `object[]` | Opcional. Especificações detalhadas do veículo. |
 
-### Parametros do objeto "especificacoes"
+### Parametros do objeto "specifications"
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
-| `motorizacao` | `String` | Opcional. O tipo de motorização do veículo. |
-| `combustivel` | `string` |Opcional. Tipo de combustível utilizado.|
+| `engine` | `String` | Opcional. O tipo de motorização do veículo. |
+| `fuel` | `string` |Opcional. Tipo de combustível utilizado.|
 | `torque` | `number` | Opcional. O torque do motor (Nm).|
-| `cilindrada` | `string` |Opcional. A cilindrada do motor (cc).|
-| `direcao` | `string` |Opcional. Tipo de direção (ex: hidráulica).|
-| `typeTracao` | `string` | Opcional. Especificações detalhadas do veículo.|
+| `displacement` | `string` |Opcional. A cilindrada do motor (cc).|
+| `steering` | `string` |Opcional. Tipo de direção (ex: hidráulica).|
+| `drivetrain` | `string` | Opcional. Especificações detalhadas do veículo.|
 
 #### Código
 ```
@@ -333,19 +335,19 @@ veiculoRoutes.put("/veiculo/:id", veiculoController.updateVeiculo);
 
 ```
 {
-  "modelo": "Civic",
+  "model": "Civic",
   "year": 2021,
-  "marca": "Honda",
-  "cor": "Azul",
-  "categoria": "Sedan",
-  "especificacoes": [
+  "brand": "Honda",
+  "color": "Azul",
+  "category": "Sedan",
+  "specifications": [
     {
-      "motorizacao": "2.0",
-      "combustivel": "Gasolina",
+      "engine": "2.0",
+      "fuel": "Gasolina",
       "torque": 310,
-      "cilindrada": 1996,
-      "direcao": "Elétrica",
-      "typeTracao": "Dianteira"
+      "displacement": 1996,
+      "steering": "Elétrica",
+      "drivetrain": "Dianteira"
     }
   ]
 }
@@ -354,24 +356,24 @@ veiculoRoutes.put("/veiculo/:id", veiculoController.updateVeiculo);
 ### Respostas
 
 #### Resposta de Sucesso (200)
-Retorna os detalhes atualizados do veículo após a modificação. O corpo da resposta contém um objeto com as informações do veículo, incluindo as especificações técnicas.
+Retorna os detalhes atualizados do veículo após a modificação. O colorpo da resposta contém um objeto com as informações do veículo, incluindo as especificações técnicas.
 
 ```
 {
   "veiculo": {
-    "modelo": "Civic",
+    "model": "Civic",
     "year": 2021,
-    "marca": "Honda",
-    "cor": "Azul",
-    "categoria": "Sedan",
-    "especificacoes": [
+    "brand": "Honda",
+    "color": "Azul",
+    "category": "Sedan",
+    "specifications": [
       {
-        "motorizacao": "2.0",
-        "combustivel": "Gasolina",
+        "engine": "2.0",
+        "fuel": "Gasolina",
         "torque": 310,
-        "cilindrada": 1996,
-        "direcao": "Elétrica",
-        "typeTracao": "Dianteira"
+        "displacement": 1996,
+        "steering": "Elétrica",
+        "drivetrain": "Dianteira"
       }
     ]
   }
@@ -390,7 +392,7 @@ Retornado quando o id fornecido não é um formato válido. O código de status 
 ```
 
 #### Resposta de Erro Interno do Servidor(500)
-Retornado quando ocorre um erro inesperado no servidor. O código de status 500 indica que houve um problema interno que impediu o processamento da requisição.
+Retornado quando ocolorre um erro inesperado no servidor. O código de status 500 indica que houve um problema interno que impediu o processamento da requisição.
 ```
 {
     "err": "Erro interno do servidor!"
@@ -400,7 +402,7 @@ Retornado quando ocorre um erro inesperado no servidor. O código de status 500 
 
 ## VARIAVEIS DE AMBIENTE
 
-Para configurar e rodar o projeto corretamente, você precisa definir algumas variáveis de ambiente. Siga as instruções abaixo para configurar seu arquivo .env:
+Para configurar e rodar o projeto colorretamente, você precisa definir algumas variáveis de ambiente. Siga as instruções abaixo para configurar seu arquivo .env:
 
 - Crie um arquivo .env na raiz do seu projeto, se ainda não existir.
    
