@@ -41,7 +41,7 @@ Quando a solicitação é processada com sucesso, a API retorna um status 200, i
 {
 	"veiculos": [
 		{
-			"_id": "66e71a32e79b81722c67ca9f",
+			"_id": "66e72b88e79b81722c67cad1",
 			"modelo": "Mustang",
 			"year": 2024,
 			"marca": "Ford",
@@ -55,7 +55,27 @@ Quando a solicitação é processada com sucesso, a API retorna um status 200, i
 					"cilindrada": 4951,
 					"direcao": "Hidráulica",
 					"typeTracao": "Tração traseira",
-					"_id": "66e71a32e79b81722c67caa0"
+					"_id": "66e72b88e79b81722c67cad2"
+				}
+			],
+			"__v": 0
+		},
+		{
+			"_id": "66e7335be79b81722c67cad6",
+			"modelo": "Corolla",
+			"year": 2024,
+			"marca": "Toyota",
+			"cor": "Prata",
+			"categoria": "Sedã",
+			"especificacoes": [
+				{
+					"motorizacao": "2.0 Flex",
+					"combustivel": "Gasolina/Álcool",
+					"torque": 200,
+					"cilindrada": 1987,
+					"direcao": "Elétrica",
+					"typeTracao": "Tração dianteira",
+					"_id": "66e7335be79b81722c67cad7"
 				}
 			],
 			"__v": 0
