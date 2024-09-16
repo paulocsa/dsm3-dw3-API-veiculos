@@ -54,8 +54,7 @@ Quando a solicitação é processada com sucesso, a API retorna um status 200, i
 					"torque": 450,
 					"displacement": 4951,
 					"steering": "Hidráulica",
-					"drivetrain": "Tração traseira",
-					"_id": "66e72b88e79b81722c67cad2"
+					"drivetrain": "Tração traseira"
 				}
 			],
 			"__v": 0
@@ -74,8 +73,7 @@ Quando a solicitação é processada com sucesso, a API retorna um status 200, i
 					"torque": 200,
 					"displacement": 1987,
 					"steering": "Elétrica",
-					"drivetrain": "Tração dianteira",
-					"_id": "66e7335be79b81722c67cad7"
+					"drivetrain": "Tração dianteira"
 				}
 			],
 			"__v": 0
@@ -140,8 +138,7 @@ Quando a solicitação é processada com sucesso, a API retorna um status 200, i
 					"torque": 450,
 					"displacement": 4951,
 					"steering": "Hidráulica",
-					"drivetrain": "Tração traseira",
-					"_id": "66e71a32e79b81722c67caa0"
+					"drivetrain": "Tração traseira"
 				}
 			],
 			"__v": 0
