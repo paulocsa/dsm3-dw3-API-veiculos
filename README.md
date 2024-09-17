@@ -11,7 +11,7 @@ Esta API é utilizada para gerenciar um catálogo de veículos, permitindo opera
 # Documentação da API
 
 
-## End Points
+## Endpoints
 
 ### Para retornar todos os veículos
 ```http
